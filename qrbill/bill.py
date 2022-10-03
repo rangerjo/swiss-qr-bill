@@ -564,12 +564,12 @@ class QRBill:
             y_pos += 28
 
         grp.add(dwg.text(self.label("Currency"), (margin, currency_top), **receipt_head_font))
-        grp.add(dwg.text(self.label("Amount"), (add_mm(margin, mm(12)), currency_top), **receipt_head_font))
+        grp.add(dwg.text(self.label("Amount"), (add_mm(margin, mm(25)), currency_top), **receipt_head_font))
         grp.add(dwg.text(self.currency, (margin, add_mm(currency_top, mm(5))), **self.font_info))
         if self.amount:
             grp.add(dwg.text(
                 format_amount(self.amount),
-                (add_mm(margin, mm(12)), add_mm(currency_top, mm(5))),
+                (add_mm(margin, mm(25)), add_mm(currency_top, mm(5))),
                 **self.font_info
             ))
         else:
@@ -650,12 +650,12 @@ class QRBill:
         self.draw_swiss_cross(dwg, grp, (payment_left, qr_top), im.width * scale_factor)
 
         grp.add(dwg.text(self.label("Currency"), (payment_left, currency_top), **payment_head_font))
-        grp.add(dwg.text(self.label("Amount"), (add_mm(payment_left, mm(12)), currency_top), **payment_head_font))
+        grp.add(dwg.text(self.label("Amount"), (add_mm(payment_left, mm(25)), currency_top), **payment_head_font))
         grp.add(dwg.text(self.currency, (payment_left, add_mm(currency_top, mm(5))), **self.font_info))
         if self.amount:
             grp.add(dwg.text(
                 format_amount(self.amount),
-                (add_mm(payment_left, mm(12)), add_mm(currency_top, mm(5))),
+                (add_mm(payment_left, mm(25)), add_mm(currency_top, mm(5))),
                 **self.font_info
             ))
         else:
